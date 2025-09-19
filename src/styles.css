@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* === Animated background + soft blobs === */
+@keyframes blob {
+  0%,100% { transform: translate(0,0) scale(1); }
+  33%     { transform: translate(24px,-28px) scale(1.05); }
+  66%     { transform: translate(-18px,20px) scale(0.98); }
+}
+.animate-blob { animation: blob 18s ease-in-out infinite; }
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+
+/* Soft grid overlay (super subtle) */
+.bg-grid {
+  background-image:
+    radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* Glass card feel */
+.glass {
+  @apply bg-white/70 backdrop-blur border border-white/60;
+}
+
+/* Slight tilt on hover (for cards/buttons) */
+.tilt:hover { transform: translateY(-2px) scale(1.01); }
